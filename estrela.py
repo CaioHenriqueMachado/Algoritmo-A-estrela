@@ -1,43 +1,3 @@
-class Aestrela:
-  def main(self, cities):
-    self.cities = cities
-
-  def buscaAEstrela(self, nó_origem, nó_destino):
-
-    # 1. Criar fila explorados e fila de prioridades = {Ø}
-    self.fila_explorados = []
-    self.fila_propriedades = []
-
-    # 2. Função g do nó origem = 0
-    nó_origem.getValorFuncaoG(0)
-
-    # 3. Se origem == destino -> finaliza
-    if (nó_origem.nome == nó_destino.nome):
-      print("FINALIZOU !!")
-      return True
-
-    # 4. filaPrioridades adiciona origem
-    self.fila_propriedades.append(nó_origem.nome)
-
-    # 5. Enquanto filaPrioridades não vazia e destino não encontrado
-    while ( len(self.fila_propriedades) != 0 ):
-      # 5_1.No atual = no com menor função f
-      buscaMenorValorFuncaoF(self.cities, self.fila_propriedades[0])
-
-      
-
-
-
-
-    def buscaMenorValorFuncaoF(cities, name_city):
-      for city in self.cities:
-        if (city.nome == self.fila_propriedades[0]):
-          menor
-          city.aresta[2].noAlvo
-
-
-
-
 class Aresta:
     def __init__(self, alvo,custo):
         self.custo=custo
@@ -85,6 +45,67 @@ class No:
     
     def getAdjacentes(self):
         return self.adjacentes
+
+
+def encontrarMenor(lista):
+    menor = 0
+    for indice in range(0,len(lista)):
+        if(lista[menor].getFuncaoF()>lista[indice].getFuncaoF()):
+            menor = indice
+    return lista.pop(menor)
+
+def percorrerCaminho(alvo):
+    caminho = "]"
+    while(not(alvo is None)):
+       caminho=", "+alvo.getNome()+caminho
+       alvo=alvo.getAdjacente()
+    caminho = "["+caminho
+    return caminho
+    
+
+class Aestrela:
+  def main(self, cities):
+    self.cities = cities
+
+  def buscaAEstrela(self, nó_origem, nó_destino):
+
+    # 1. Criar fila explorados e fila de prioridades = {Ø}
+    self.fila_explorados = []
+    self.fila_propriedades = []
+
+    # 2. Função g do nó origem = 0
+    nó_origem.getValorFuncaoG(0)
+
+    # 3. Se origem == destino -> finaliza
+    if (nó_origem.nome == nó_destino.nome):
+      print("FINALIZOU !!")
+      return True
+
+    # 4. filaPrioridades adiciona origem
+    self.fila_propriedades.append(nó_origem.nome)
+
+    # 5. Enquanto filaPrioridades não vazia e destino não encontrado
+    while ( len(self.fila_propriedades) != 0 ):
+      # 5_1.No atual = no com menor função f
+      buscaMenorValorFuncaoF(self.cities, self.fila_propriedades[0])
+
+      
+
+
+
+
+    def buscaMenorValorFuncaoF(cities, name_city):
+      for city in self.cities:
+        if (city.nome == self.fila_propriedades[0]):
+          menor
+          city.aresta[2].noAlvo
+
+
+
+
+
+
+
 
 
 # ---------------------------------------------------------------------------
