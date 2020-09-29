@@ -61,7 +61,7 @@ def percorrerCaminho(alvo):
        alvo=alvo.getAdjacente()
     caminho = "["+caminho
     return caminho
-    
+
 
 class Aestrela:
   def main(self, cities):
@@ -94,14 +94,6 @@ class Aestrela:
 
 
 
-    def buscaMenorValorFuncaoF(cities, name_city):
-      for city in self.cities:
-        if (city.nome == self.fila_propriedades[0]):
-          menor
-          city.aresta[2].noAlvo
-
-
-
 
 
 
@@ -109,120 +101,37 @@ class Aestrela:
 
 
 # ---------------------------------------------------------------------------
-Cities = []
-Cities.append(Nó('Arad', 366))
-Cities[0].getAdjacentes('Zerind',75)
-Cities[0].getAdjacentes('Sibiu',140)
-Cities[0].getAdjacentes('Timisoara',118)
 
-# Cities.append(Nó('Bucharest', 0))
-# Cities[1].getAdjacentes('Urziceni',85)
-# Cities[1].getAdjacentes('Giurgiu',90)
-# Cities[1].getAdjacentes('Fagaras',211)
+arad = No("Arad",366)
+bucharest=No("Bucharest",0)
+craiova = No("Craiova",160)
+eforie=No("Eforie",161)
+fagaras= No("Fagaras",178)
+giurgiu = No("Giurgiu", 77)
+zerind = No("Zerind", 374)
+oradea = No("Oradea", 380)
+sibiu = No("Sibiu", 253)
+rimnicu = No("Rimnicu Vilcea", 193)
+pitesti = No("Pitesti", 98)
+timisoara = No("Timisoara", 329)
+lugoj = No("Lugoj", 244)
+mehadia = No("Mehadia", 241)
+drobeta = No("Drobeta", 242)
 
-# Cities.append(Nó('Craiova', 160))
-# Cities[2].getAdjacentes('Drobeta',120)
-# Cities[2].getAdjacentes('Rimnicu',146)
-# Cities[2].getAdjacentes('Pitesti',138)
+arad.setAdjacentes([Aresta(zerind,75),Aresta(sibiu,140),Aresta(timisoara,118)])
+zerind.setAdjacentes([Aresta(arad,75),Aresta(oradea,71)])
+oradea.setAdjacentes([Aresta(zerind,71),Aresta(sibiu,151)])
+sibiu.setAdjacentes([Aresta(arad,140),Aresta(fagaras,99),Aresta(oradea,151),Aresta(rimnicu,80)])
+fagaras.setAdjacentes([Aresta(sibiu,99),Aresta(bucharest,211)])
+rimnicu.setAdjacentes([Aresta(sibiu,80),Aresta(pitesti,97),Aresta(craiova,146)])
+pitesti.setAdjacentes([Aresta(rimnicu,97),Aresta(bucharest,101),Aresta(craiova,138)])
+timisoara.setAdjacentes([Aresta(arad,118),Aresta(lugoj,111)])
+lugoj.setAdjacentes([Aresta(timisoara,111),Aresta(mehadia,70)])
+mehadia.setAdjacentes([Aresta(lugoj,70),Aresta(drobeta,75)])
+drobeta.setAdjacentes([Aresta(mehadia,75),Aresta(craiova,120)])
+craiova.setAdjacentes([Aresta(drobeta,120),Aresta(rimnicu,146),Aresta(pitesti,138)])
+bucharest.setAdjacentes([Aresta(pitesti,101),Aresta(giurgiu,90),Aresta(fagaras,211)])
+giurgiu.setAdjacentes([Aresta(bucharest,90)])
 
-# Cities.append(Nó('Drobeta', 242))
-# Cities[3].getAdjacentes('Craiova',120)
-# Cities[3].getAdjacentes('Mehadia',75)
-
-
-# Cities.append(Nó('Eforie', 161))
-# Cities[4].getAdjacentes('Hirsova',86)
-
-# Cities.append(Nó('Fagaras', 176))
-# Cities[5].getAdjacentes('Bucharest',211)
-# Cities[5].getAdjacentes('Sibiu',99)
-
-# Cities.append(Nó('Giurgiu', 77))
-# Cities[6].getAdjacentes('Bucharest',90)
-
-# Cities.append(Nó('Hirsova', 151))
-# Cities[7].getAdjacentes('Eforie',86)
-# Cities[7].getAdjacentes('Urziceni',98)
-
-# Cities.append(Nó('Iasi', 226))
-# Cities[8].getAdjacentes('Vaslui',92)
-# Cities[8].getAdjacentes('Neamt',87)
-
-# Cities.append(Nó('Lugoj', 244))
-# Cities[9].getAdjacentes('Mehadia',70)
-# Cities[9].getAdjacentes('Timisoara',111)
-
-# Cities.append(Nó('Mehadia', 241))
-# Cities[10].getAdjacentes('Lugoj',70)
-# Cities[10].getAdjacentes('Drobeta',75)
-
-# Cities.append(Nó('Neamt', 234))
-# Cities[11].getAdjacentes('Iasi',87)
-
-# Cities.append(Nó('Oradea', 380))
-# Cities[12].getAdjacentes('Zerind',71)
-# Cities[12].getAdjacentes('Subiu',151)
-
-# Cities.append(Nó('Pitesti', 100))
-# Cities[13].getAdjacentes('Bucharest',101)
-# Cities[13].getAdjacentes('Craiova',138)
-# Cities[13].getAdjacentes('Rimnicu Vilcea',97)
-
-# Cities.append(Nó('Rimnicu Vilcea', 193))
-# Cities[14].getAdjacentes('Pitesti',97)
-# Cities[14].getAdjacentes('Sibiu',80)
-# Cities[14].getAdjacentes('Craiova',146)
-
-# Cities.append(Nó('Sibiu', 253))
-# Cities[15].getAdjacentes('Rimnicu Vilcea',80)
-# Cities[15].getAdjacentes('Fagaras',99)
-# Cities[15].getAdjacentes('Oradea',151)
-
-# Cities.append(Nó('Timisoara', 329))
-# Cities[16].getAdjacentes('Arad',118)
-# Cities[16].getAdjacentes('Loguj',111)
-
-# Cities.append(Nó('Urziceni', 80))
-# Cities[17].getAdjacentes('Bucharest',85)
-# Cities[17].getAdjacentes('Vaslui',142)
-# Cities[17].getAdjacentes('Hirsova',98)
-
-# Cities.append(Nó('Vaslui', 199))
-# Cities[18].getAdjacentes('Iasi',92)
-# Cities[18].getAdjacentes('Urziceni',142)
-
-
-# Cities.append(Nó('Zerind', 374))
-# Cities[19].getAdjacentes('Arad', 75)
-# Cities[19].getAdjacentes('Oradea', 71)
-
-
-
-# FAZENDO CALCULO DA FUNÇÃO F
-# FUNÇÃO F => F = G + H
-# FUNÇÃO G => Custo do nó inicial até o  nó atual.
-# FUNÇÃO H => Custo do nó atual até o  nó destino.
-
-for city in Cities:
-  print('só 1')
-  for adjacentes in city.aresta:
-    print('só 3')
-    for search_city in Cities:
-      print('só 3')
-      print(search_city.nome)
-      if (search_city.nome == adjacentes.noAlvo):
-         adjacentes.valorF = search_city.valorFuncaoH + adjacentes.custo
-    
-
-
-# for city in Cities:
-#   for adjacentes in city.aresta:
-#     print(adjacentes.noAlvo)
-#     print(adjacentes.valorF)
-
-# print(Cities[0].aresta[2].noAlvo)
-
-
-# algoritmo = Aestrela()
-# algoritmo.main(Cities)
-# algoritmo.buscaAEstrela(Cities[0], Cities[1])
+aEstrela(arad,bucharest)
+print(percorrerCaminho(bucharest))
