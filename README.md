@@ -26,7 +26,7 @@ reciar os algoritmo a estrela em python
 
 <h1 align="center">CLASSES E FUNÇÕES</h1>
 
-ATRIBUTOS PARA OS NÓS:
+ATRIBUTOS PARA CLASSE NÓ:
 –String nome; (get - construtor)
 –double valorFuncaoF= 0; (get e set)
 –doublevalorFuncaoG; (get e set)
@@ -34,10 +34,10 @@ ATRIBUTOS PARA OS NÓS:
 –Nó antecessor; (get e set)
 –Aresta[] adjacentes; (get e set)
 <br>
-ATRIBUTOS PARA A ARESTA:
+ATRIBUTOS PARA CLASSE ARESTA:
 –Double custo; (get - construtor)
 –No alvo; (get - construtor)
 <br>
-CLASSE AESTRELA:
+FUNÇÃO AESTRELA:
 –Public static void main(String[] args){}
-–publicstaticvoidbuscaAEstrela(Nó origem, Nó destino) {
+–publicstaticvoidbuscaAEstrela(Nó origem, Nó destino) {}
