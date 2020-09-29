@@ -49,34 +49,42 @@ class Aresta:
     def getAlvo(self):
         return self.alvo
 
-class Nó:
-  def __init__(self, nome, valorFuncaoH):
-    self.nome = nome
-    self.valorFuncaoH = valorFuncaoH
-    self.aresta = []
-    self.valorFuncaoF = 0
+class No:
+    def __init__(self, nome, funcaoH):
+        self.nome=nome
+        self.funcaoH=funcaoH
+        self.funcaoF=0
+        self.adjacente=None
 
-  def getValorFuncaoF(self, valorF):
-    self.valorFuncaoF = valorF
+    def getNome(self):
+        return self.nome
+    
+    def getFuncaoH(self):
+        return self.funcaoH
 
-  def setValorFuncaoF(self):
-    return self.valorFuncaoF
+    def setFuncaoF(self, funcaoF):
+        self.funcaoF = funcaoF
+    
+    def getFuncaoF(self):
+        return self.funcaoF
+    
+    def setFuncaoG(self, funcaoG):
+        self.funcaoG=funcaoG
 
-  def getValorFuncaoG(self, valorG):
-    self.valorFuncaoG = valorG
-
-  def setValorFuncaoG(self):
-    print(self.valorFuncaoG)
-
-  def getNoAntecesor(self, NoAnt):
-    self.NoAntecesor = NoAnt
-
-  def setNoAntecesor(self):
-    return self.NoAntecesor
-
-  def getAdjacentes(self, nóAlvo, custo):
-    self.aresta.append(Aresta(nóAlvo, custo))
-
+    def getFuncaoG(self):
+        return self.funcaoG
+    
+    def setAdjacente(self, adjacente):
+        self.adjacente=adjacente
+    
+    def getAdjacente(self):
+        return self.adjacente
+    
+    def setAdjacentes(self, adjacentes):
+        self.adjacentes=adjacentes
+    
+    def getAdjacentes(self):
+        return self.adjacentes
 
 
 # ---------------------------------------------------------------------------
