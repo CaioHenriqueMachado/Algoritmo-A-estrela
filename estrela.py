@@ -63,42 +63,59 @@ def percorrerCaminho(alvo):
     return caminho
 
 
-class Aestrela:
-  def main(self, cities):
-    self.cities = cities
-
-  def buscaAEstrela(self, nó_origem, nó_destino):
-
+def aEstrela(origem,fim): 
     # 1. Criar fila explorados e fila de prioridades = {Ø}
-    self.fila_explorados = []
-    self.fila_propriedades = []
+    fila=[]
+    explorados=[]
 
-    # 2. Função g do nó origem = 0
-    nó_origem.getValorFuncaoG(0)
+    # 2. Se origem == destino -> finaliza
+    if(origem.getNome() != fim.getNome()):
+      # 3. Função g do nó origem = 0
+      origem.setFuncaoG(0)
+      # 4. filaPrioridades adiciona origem
+      fila.append(origem)
+      # 5. Enquanto filaPrioridades não vazia e destino não encontrado
+      encontrado=False
 
-    # 3. Se origem == destino -> finaliza
-    if (nó_origem.nome == nó_destino.nome):
-      print("FINALIZOU !!")
-      return True
+      while(len(fila)>0 and not(encontrado)):
+        # 5_1. Nó atual = Nó com menor função f
+        atual = encontrarMenor(fila)
+        # 5_2. Fila explorados adiciona nó atual
+        explorados.append(atual)
+        # 5_3. Se nó atual == destino -> parar
+        if(atual.getNome()==fim.getNome()):
+          encontrado=True
 
-    # 4. filaPrioridades adiciona origem
-    self.fila_propriedades.append(nó_origem.nome)
+        # 5_4. Se não...
+        else:
+          # 5_4_1. Para cada aresta adjacente do no atual
+          for aresta in atual.getAdjacentes():
+            # 5_4_2. Nó filho = aresta.alvo
+            filho = aresta.getAlvo()
+            # 5_4_3. funcaoGTemp= noAtual.FuncaoG() + aresta.custo
+            funcaoGTemp = atual.getFuncaoG() + aresta.getCusto()
+            # 5_4_4. funcaoFTemp= funcaoGTemp+ noFilho.FuncaoH()
+            funcaoFTemp= funcaoGTemp+filho.getFuncaoH()
+            # 5_4_5. Se caso o nó filho já tenha sido explorado e seu valor de função f é maior que a função f do pai, então ele é desconsiderado
+            if((filho in explorados) and (funcaoFTemp>=filho.getFuncaoF())):
+              continue
 
-    # 5. Enquanto filaPrioridades não vazia e destino não encontrado
-    while ( len(self.fila_propriedades) != 0 ):
-      # 5_1.No atual = no com menor função f
-      buscaMenorValorFuncaoF(self.cities, self.fila_propriedades[0])
-
+            # 5_4_6. senão se o nó filho não está na filaPrioridadesou sua função f é maior que a funcaoFTemp
+            elif((filho not in fila)or (funcaoFTemp < filho.getFuncaoF())):
+              # 5_4_6_1. filho.Adjacente= atual
+              filho.setAdjacente(atual)
+              # 5_4_6_2.filho.funcaoG= funcaoGTemp
+              filho.setFuncaoG(funcaoGTemp)
+              # 5_4_6_3. filho.funcaoF= funcaoFTemp
+              filho.setFuncaoF(funcaoFTemp)
+              # 5_4_6_4. Se filaPrioridadescontem filho
+              # 5_4_6_5. fila.removefilho
+              if(filho not in fila):
+                # 5_4_6_5. Fila adiciona filho
+                fila.append(filho)
+  
+  
       
-
-
-
-
-
-
-
-
-
 
 # ---------------------------------------------------------------------------
 
