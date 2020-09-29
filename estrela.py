@@ -39,10 +39,15 @@ class Aestrela:
 
 
 class Aresta:
-  def __init__(self, noAlvo, custo):
-    self.noAlvo = noAlvo
-    self.custo = custo
-    self.valorF = 0
+    def __init__(self, alvo,custo):
+        self.custo=custo
+        self.alvo=alvo
+  
+    def getCusto(self):
+        return self.custo
+  
+    def getAlvo(self):
+        return self.alvo
 
 class Nó:
   def __init__(self, nome, valorFuncaoH):
